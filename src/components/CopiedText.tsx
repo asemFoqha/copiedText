@@ -33,7 +33,7 @@ const CopiedText = ({ text }: { text: IText }) => {
     <Card>
       <CardBody padding={0}>
         <HStack spacing={4} align='stretch' gap={0}>
-          <Text flex='1' padding={5}>
+          <Text wordBreak={'break-all'} flex='1' padding={5}>
             {text.text}
           </Text>
           <Center padding={1}>

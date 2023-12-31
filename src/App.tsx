@@ -44,12 +44,13 @@ function App() {
       <Box display={'flex'} position={'relative'} w='100%' h='95vh' p={4}>
         <Flex
           maxW={'550px'}
-          top={'50%'}
+          top={'45%'}
           flexDirection={'column'}
           gap={2}
           justifyContent={'center'}
           alignItems='stretch'
           margin='auto'
+          position={'sticky'}
         >
           <AddTextForm handleAddingText={handleAddingText} />
           <TextList textArray={textArray} />
