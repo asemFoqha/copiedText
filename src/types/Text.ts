@@ -1,6 +1,7 @@
 type Text = {
-  id: string;
-  value: string;
+  _id?: string;
+  date?: string;
+  text: string;
 };
 
 export default Text;
