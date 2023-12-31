@@ -1,13 +1,13 @@
-import { HStack, IconButton, Input } from "@chakra-ui/react";
-import { ChangeEvent, FormEvent, useState } from "react";
-import { IoMdAdd } from "react-icons/io";
+import { HStack, IconButton, Input } from '@chakra-ui/react';
+import { ChangeEvent, FormEvent, useState } from 'react';
+import { IoMdAdd } from 'react-icons/io';
 
 const AddTextForm = ({
   handleAddingText,
 }: {
   handleAddingText: (val: string) => void;
 }) => {
-  let [value, setValue] = useState("");
+  let [value, setValue] = useState('');
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     let inputValue = e.target.value;
@@ -16,9 +16,9 @@ const AddTextForm = ({
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (value.trim() === "") return;
+    if (value.trim() === '') return;
     handleAddingText(value);
-    setValue("");
+    setValue('');
   };
 
   return (
@@ -27,13 +27,13 @@ const AddTextForm = ({
         <Input
           value={value}
           onChange={handleInputChange}
-          placeholder="type somthing..."
-          size="sm"
+          placeholder='type somthing...'
+          size='sm'
         />
 
         <IconButton
-          type="submit"
-          aria-label="Search database"
+          type='submit'
+          aria-label='Search database'
           icon={<IoMdAdd />}
         />
       </HStack>

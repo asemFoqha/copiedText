@@ -7,10 +7,10 @@ import {
   HStack,
   Text,
   useToast,
-} from "@chakra-ui/react";
-import { IoMdCopy } from "react-icons/io";
+} from '@chakra-ui/react';
+import { IoMdCopy } from 'react-icons/io';
 
-import IText from "../types/Text";
+import IText from '../types/Text';
 
 const CopiedText = ({ text }: { text: IText }) => {
   const toast = useToast();
@@ -18,11 +18,11 @@ const CopiedText = ({ text }: { text: IText }) => {
   //#region handlers
 
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text.text);
 
     toast({
-      title: "Text Copied.",
-      status: "success",
+      title: 'Text Copied.',
+      status: 'success',
       duration: 3000,
     });
   };
@@ -32,17 +32,17 @@ const CopiedText = ({ text }: { text: IText }) => {
   return (
     <Card>
       <CardBody padding={0}>
-        <HStack spacing={4} align="stretch" gap={0}>
-          <Text wordBreak={"break-all"} flex="1" padding={5}>
-            {text.value}
+        <HStack spacing={4} align='stretch' gap={0}>
+          <Text wordBreak={'break-all'} flex='1' padding={5}>
+            {text.text}
           </Text>
           <Center padding={1}>
-            <Divider orientation="vertical" />
+            <Divider orientation='vertical' />
           </Center>
           <Box
-            display="flex"
-            alignItems="center"
-            cursor="pointer"
+            display='flex'
+            alignItems='center'
+            cursor='pointer'
             padding={2}
             onClick={handleCopyClick}
           >
