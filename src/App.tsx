@@ -1,11 +1,11 @@
-import { Box, Divider, Flex } from '@chakra-ui/react';
-import AddTextForm from './components/AddTextForm';
-import NavBar from './components/NavBar';
-import { useEffect, useState } from 'react';
-import Text from './types/Text';
-import TextList from './components/TextList';
+import { Box, Divider, Flex } from "@chakra-ui/react";
+import AddTextForm from "./components/AddTextForm";
+import NavBar from "./components/NavBar";
+import { useEffect, useState } from "react";
+import Text from "./types/Text";
+import TextList from "./components/TextList";
 
-const END_POINT = 'https://copy-paste-green.vercel.app/api/data';
+const END_POINT = "https://copy-paste-green.vercel.app/api/data";
 
 function App() {
   const [textArray, setTextArray] = useState<Text[]>([]);
@@ -20,9 +20,9 @@ function App() {
 
   const handlePostText = (text: string) => {
     fetch(END_POINT, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ text }),
     }).then((res) => {
@@ -38,19 +38,19 @@ function App() {
   };
 
   return (
-    <div className='App'>
+    <div className="App">
       <NavBar />
-      <Divider orientation='horizontal' />
-      <Box display={'flex'} position={'relative'} w='100%' h='95vh' p={4}>
+      <Divider orientation="horizontal" />
+      <Box display={"flex"} position={"relative"} w="100%" h="95vh" p={4}>
         <Flex
-          maxW={'550px'}
-          top={'45%'}
-          flexDirection={'column'}
+          maxW={"550px"}
+          top={"45%"}
+          flexDirection={"column"}
           gap={2}
-          justifyContent={'center'}
-          alignItems='stretch'
-          margin='auto'
-          position={'sticky'}
+          justifyContent={"center"}
+          alignItems="stretch"
+          margin="auto"
+          position={"sticky"}
         >
           <AddTextForm handleAddingText={handleAddingText} />
           <TextList textArray={textArray} />
