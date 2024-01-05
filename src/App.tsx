@@ -43,6 +43,7 @@ function App() {
       <Divider orientation="horizontal" />
       <Box display={"flex"} position={"relative"} w="100%" h="95vh" p={4}>
         <Flex
+          flex={1}
           maxW={"550px"}
           top={"45%"}
           flexDirection={"column"}
